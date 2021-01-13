@@ -40,3 +40,12 @@ def login_user():
 
 
     return render_template('users/login.html')
+
+
+@user_blueprint.route('/logout')
+def logout():
+    session['email'] = None
+    return redirect(url_for('users.login_user'))
+
+
+

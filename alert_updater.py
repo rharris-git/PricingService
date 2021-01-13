@@ -1,5 +1,9 @@
 
+
+from dotenv import load_dotenv
 from models.alert import Alert
+
+load_dotenv()
 
 alerts = Alert.all()
 
