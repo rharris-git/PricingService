@@ -12,7 +12,7 @@
                     <p>
                         For URLS starting with {{ store.url_prefix }}.
                     </p>
-                    {% if session['email'] == config.ADMIN %}
+                    {% if session['email'] in config.ADMINS %}
                         <a class="btn btn-secondary" href="{{ url_for('stores.edit_store', store_id=store._id) }}">
                             Edit
                         </a>
@@ -23,7 +23,7 @@
                 </div>
             {% endfor %}
         </div>
-        {% if session['email'] == config.ADMIN %}
+        {% if session['email'] in config.ADMINS %}
             <a class="btn btn-primary" href="{{ url_for('stores.create_store') }}">
                 Create New
             </a>
