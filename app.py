@@ -9,7 +9,7 @@ from views.users import user_blueprint
 app = Flask(__name__)
 
 app.secret_key = os.urandom(64)
-app.config.from_object('src.config')
+app.config.from_object('config')
 
 
 @app.route('/')
